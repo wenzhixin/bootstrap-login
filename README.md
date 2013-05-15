@@ -6,12 +6,12 @@ login from for bootstrap
 
 html + css:
 	
-	<link rel="stylesheet" href="assets/bootstrap-login/bootstrap-login.css" />
+	<link rel="stylesheet" href="bootstrap-login.css" />
 	<div id="login"></div>
 	
 js:
 	
-	<script type="text/javascript" src="assets/bootstrap-login/jquery.bootstrap.login.js"></script>
+	<script type="text/javascript" src="jquery.bootstrap.login.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$('#login').bootstrapLogin();
