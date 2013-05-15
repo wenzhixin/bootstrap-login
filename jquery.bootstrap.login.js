@@ -47,6 +47,9 @@
 					return false;
 				}
 			});
+			this.$error.find('button').click(function() {
+				that.$error.hide();
+			});
 		},
 		
 		validate: function(username, password) {
@@ -101,7 +104,7 @@
 			        '</div>',
 			      '</fieldset>',
 			      '<div class="alert alert-error hide">',
-			        '<button type="button" class="close" data-dismiss="alert">&times;</button>',
+			        '<button type="button" class="close">&times;</button>',
 			        '<span></span>',
 			      '</div>',
 			      '<div class="form-horizontal">',
