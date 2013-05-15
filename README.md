@@ -1,6 +1,6 @@
 ## Bootstrap Login
 
-login from for bootstrap
+Login plugin from for bootstrap. [demo](http://wenzhixin.net.cn/p/bootstrap-login/)
 
 ### How to use:
 
