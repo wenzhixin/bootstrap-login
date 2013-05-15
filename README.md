@@ -15,6 +15,16 @@ js:
 	<script type="text/javascript">
 		$(function() {
 			$('#login').bootstrapLogin();
+			// use submit
+			$('#login).bootstrapLogin({
+				onSubmit: function(username, password) {
+					if (username === 'admin' && password === 'admin') {
+						location.href = 'http://wenzhixin.net.cn';
+						return true;
+					}
+					return false;
+				}
+			});
 		});
 	</script>
 	
