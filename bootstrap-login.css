@@ -1,0 +1,35 @@
+/**
+ * @author zhixin wen <wenzhixin2010@gmail.com>
+ * @version 0.0.1
+ * @blog http://wenzhixin.net.cn
+ */
+
+.bs-login {
+    position: relative;
+    width: auto;
+    max-width: 835px;
+    margin: 20px auto;
+    padding: 20px 0;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    border: 1px solid rgba(0,0,0,.1);
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 225px rgba(255,255,255,.55);
+    box-shadow: 0 0 225px rgba(255,255,255,.55);
+}
+.bs-signin {
+    width: auto;
+    max-width: 585px;
+    margin: 0 auto 10px;
+    padding: 0 10px;
+}
+.bs-signin h1 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+    padding: 20px 0;
+}
+.bs-signin .holding {
+    margin-bottom: 5px;
+}
