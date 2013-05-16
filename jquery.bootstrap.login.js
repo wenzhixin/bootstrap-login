@@ -38,12 +38,17 @@
 					return false;
 				}
 				if (that.options.action === '') {
-					var result = that.options.onSubmit(username, password);
-					if (result) {
-						that.$error.hide();
-					} else {
-						that.$error.show().find('span').html(locale.error_login);
-					}
+					var showResult = function(result) {
+							if (typeof result === 'undefined' || result) {
+								that.$error.hide();
+							} else {
+								that.$error.show().find('span').html(locale.error_login);
+							}
+						},
+						result = that.options.onSubmit(username, password, function(result) {
+							showResult(result);
+						});
+					showResult(result);
 					return false;
 				}
 			});
