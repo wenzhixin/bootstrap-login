@@ -33,6 +33,7 @@ js:
 	{
 		lang: 'zh_CN', // zh_CN or en
 		title: 'Scutech',
+		type: 'normal', //'normal' or 'dropdown'
 		action: '', //use RESTful default
 		onSubmit: function() { return false; }
 	}
