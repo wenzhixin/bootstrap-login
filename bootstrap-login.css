@@ -33,3 +33,6 @@
 .bs-signin .holding {
     margin-bottom: 5px;
 }
+.bs-dropdown-login {
+    padding: 10px 20px 0;
+}

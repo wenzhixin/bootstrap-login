@@ -13,6 +13,9 @@
 	function Login($el, options) {
 		this.$el = $el;
 		this.options = options;
+		if (this.options.type === 'dropdown') {
+			this.$el.addClass('dropdown');
+		}
 	}
 
 	Login.prototype = {
@@ -92,33 +95,61 @@
   		}
   	};
 	Login.getTemplate = function(options) {
-		var locale = Login.locale[options.lang];
-		return [
-			'<div class="bs-login">',
-			  '<div class="bs-signin">',
-			    '<h1>' + locale.title + options.title + '</h1>',
-			    '<form action="' + options.action + '" method="POST">',
-			      '<fieldset>',
-			        '<div class="clearfix holding">',
-			          '<input class="input-xlarge" type="text" name="username" autocomplete="on" ', 
-			          	'placeholder="' + locale.username_tip + '">',
-			        '</div>',
-			        '<div class="clearfix holding">',
-			          '<input class="input-xlarge" type="password" name="password" ', 
-			          	'placeholder="' + locale.password_tip + '">',
-			        '</div>',
-			      '</fieldset>',
-			      '<div class="alert alert-error hide">',
-			        '<button type="button" class="close">&times;</button>',
-			        '<span></span>',
-			      '</div>',
-			      '<div class="form-horizontal">',
-			        '<input type="submit" class="btn btn-primary" value="' + locale.sign_in + '" />',
-			      '</div>',
-			    '</form>',
-			  '</div>',
-			'</div>'
-  		].join('');
+		var locale = Login.locale[options.lang],
+			templates = {
+				normal: [
+					'<div class="bs-login">',
+					  '<div class="bs-signin">',
+					    '<h1>' + locale.title + options.title + '</h1>',
+					    '<form action="' + options.action + '" method="POST">',
+					      '<fieldset>',
+					        '<div class="clearfix holding">',
+					          '<input class="input-xlarge" type="text" name="username" autocomplete="on" ', 
+					          	'placeholder="' + locale.username_tip + '">',
+					        '</div>',
+					        '<div class="clearfix holding">',
+					          '<input class="input-xlarge" type="password" name="password" ', 
+					          	'placeholder="' + locale.password_tip + '">',
+					        '</div>',
+					      '</fieldset>',
+					      '<div class="alert alert-error hide">',
+					        '<button type="button" class="close">&times;</button>',
+					        '<span></span>',
+					      '</div>',
+					      '<div class="form-horizontal">',
+					        '<input type="submit" class="btn btn-primary" value="' + locale.sign_in + '" />',
+					      '</div>',
+					    '</form>',
+					  '</div>',
+					'</div>'
+		  		].join(''),
+		  		dropdown: [ 
+		  		  '<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">', 
+		  		  	locale.title + options.title + ' <b class="caret"></b>',
+		  		  '</a>',
+			      '<ul class="bs-dropdown-login dropdown-menu">',
+			        '<li>',
+			          '<form>',
+			            '<fieldset>',
+			              '<label>' + locale.username_tip + '</label>',
+			              '<input class="input-large" name="username" type="text">',
+			              '<label>' + locale.password_tip + '</label>',
+			              '<input class="input-large" name="password" type="password">',
+			              '<div class="alert alert-error hide">',
+					        '<button type="button" class="close">&times;</button>',
+					        '<span></span>',
+					      '</div>',
+			              '<button type="submit" class="btn pull-right">' + locale.sign_in + '</button>',
+			            '</fieldset>',
+			          '</form>',
+			        '</li>',
+			      '</ul>'
+			   ].join('')
+			};
+		if (!templates.hasOwnProperty(options.type)) {
+			options.type = 'normal';
+		}
+		return templates[options.type];
   	};
 
 	$.fn.bootstrapLogin = function() {
@@ -152,8 +183,9 @@
 	};
 	
 	$.fn.bootstrapLogin.defaults = {
-		lang: 'zh_CN',
+		lang: 'zh_CN', //'zh_CN' or 'en'
 		title: 'Scutech',
+		type: 'normal', //'normal' or 'dropdown'
 		action: '',
 		onSubmit: function() { return false; }
 	};
