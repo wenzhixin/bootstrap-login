@@ -76,81 +76,79 @@
 		}
 	};
 	
-  	Login.locale = {
-  		'zh_CN': {
-  			title: '登录 ',
+	Login.locale = {
+		'zh_CN': {
+			title: '登录 ',
 			username_tip: '用户名',
 			password_tip: '密码',
 			sign_in: '登录',
 			error_input: '<strong>错误！</strong> 请输入您的',
 			error_login: '<strong>错误！</strong> 您输入的用户名或者密码错误。'
-  		},
-  		'en': {
-  			title: 'Sign in to ',
+		},
+		'en': {
+			title: 'Sign in to ',
 			username_tip: 'Username',
 			password_tip: 'Password',
 			sign_in: 'Sign in',
 			error_input: '<strong>Error!</strong> Please enter your ',
 			error_login: '<strong>Error!</strong> The username or password you enter is incorrect.'
-  		}
-  	};
+		}
+	};
+	
 	Login.getTemplate = function(options) {
-		var locale = Login.locale[options.lang],
-			templates = {
-				normal: [
-					'<div class="bs-login">',
-					  '<div class="bs-signin">',
-					    '<h1>' + locale.title + options.title + '</h1>',
-					    '<form action="' + options.action + '" method="POST">',
-					      '<fieldset>',
-					        '<div class="clearfix holding">',
-					          '<input class="input-xlarge" type="text" name="username" autocomplete="on" ', 
-					          	'placeholder="' + locale.username_tip + '">',
-					        '</div>',
-					        '<div class="clearfix holding">',
-					          '<input class="input-xlarge" type="password" name="password" ', 
-					          	'placeholder="' + locale.password_tip + '">',
-					        '</div>',
-					      '</fieldset>',
-					      '<div class="alert alert-error hide">',
-					        '<button type="button" class="close">&times;</button>',
-					        '<span></span>',
-					      '</div>',
-					      '<div class="form-horizontal">',
-					        '<input type="submit" class="btn btn-primary" value="' + locale.sign_in + '" />',
-					      '</div>',
-					    '</form>',
-					  '</div>',
-					'</div>'
-		  		].join(''),
-		  		dropdown: [ 
-		  		  '<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">', 
-		  		  	locale.title + options.title + ' <b class="caret"></b>',
-		  		  '</a>',
-			      '<ul class="bs-dropdown-login dropdown-menu">',
-			        '<li>',
-			          '<form>',
-			            '<fieldset>',
-			              '<label>' + locale.username_tip + '</label>',
-			              '<input class="input-large" name="username" type="text">',
-			              '<label>' + locale.password_tip + '</label>',
-			              '<input class="input-large" name="password" type="password">',
-			              '<div class="alert alert-error hide">',
-					        '<button type="button" class="close">&times;</button>',
-					        '<span></span>',
-					      '</div>',
-			              '<button type="submit" class="btn pull-right">' + locale.sign_in + '</button>',
-			            '</fieldset>',
-			          '</form>',
-			        '</li>',
-			      '</ul>'
-			   ].join('')
-			};
+		var locale = Login.locale[options.lang], templates = {
+			normal : [
+				'<div class="bs-login">', 
+					'<div class="bs-signin">', 
+						'<h1>' + locale.title + options.title + '</h1>', 
+						'<form action="' + options.action + '" method="POST">', 
+							'<fieldset>', 
+								'<div class="clearfix holding">', 
+									'<input class="input-xlarge" type="text" name="username" autocomplete="on" ', 
+										'placeholder="' + locale.username_tip + '">', 
+								'</div>', 
+								'<div class="clearfix holding">', 
+									'<input class="input-xlarge" type="password" name="password" ', 
+										'placeholder="' + locale.password_tip + '">', 
+								'</div>', 
+							'</fieldset>', 
+							'<div class="alert alert-error hide">', 
+								'<button type="button" class="close">&times;</button>', 
+								'<span></span>', 
+							'</div>', 
+							'<div class="form-horizontal">', 
+								'<input type="submit" class="btn btn-primary" value="' + locale.sign_in + '" />', 
+							'</div>', 
+						'</form>', 
+					'</div>', 
+				'</div>'].join(''),
+			dropdown : [
+				'<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">', 
+					locale.title + options.title + ' <b class="caret"></b>', 
+				'</a>', 
+				'<ul class="bs-dropdown-login dropdown-menu">', 
+					'<li>', 
+						'<form>', 
+							'<fieldset>', 
+								'<label>' + locale.username_tip + '</label>', 
+								'<input class="input-large" name="username" type="text">', 
+								'<label>' + locale.password_tip + '</label>', 
+								'<input class="input-large" name="password" type="password">', 
+								'<div class="alert alert-error hide">', 
+									'<button type="button" class="close">&times;</button>', 
+									'<span></span>', 
+								'</div>', 
+								'<button type="submit" class="btn pull-right">' + locale.sign_in + '</button>', 
+							'</fieldset>', 
+						'</form>', 
+					'</li>', 
+				'</ul>'].join('')
+		};
 		if (!templates.hasOwnProperty(options.type)) {
 			options.type = 'normal';
 		}
 		return templates[options.type];
-  	};
+	};
 
 	$.fn.bootstrapLogin = function() {
 		var option = arguments[0], 
