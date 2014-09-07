@@ -182,7 +182,7 @@
 	
 	$.fn.bootstrapLogin.defaults = {
 		lang: 'zh_CN', //'zh_CN' or 'en'
-		title: 'Scutech',
+		title: 'Bootstrap Login',
 		type: 'normal', //'normal' or 'dropdown'
 		action: '',
 		onSubmit: function() { return false; }
