@@ -3,7 +3,6 @@
  * @version 1.0.0
  * @github https://github.com/wenzhixin/bootstrap-login
  * @blog http://wenzhixin.net.cn
- * @update 2013-05-15
  */
 
 (function($) {

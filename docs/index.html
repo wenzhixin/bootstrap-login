@@ -1,40 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>bootstrap login demo</title>
-    <link rel="stylesheet" href="assets/bootstrap2.3/css/bootstrap.css" />
-    <link rel="stylesheet" href="../src/bootstrap-login.css" />
-    <link rel="stylesheet" href="/css/fork.css" />
-    <style>
-      body {
-        margin-top: 60px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="#">Bootstrap Login</a>
-          <ul class="nav pull-right">
-            <li id="login3" data-toggle="login" data-type="dropdown"></li>
-          </ul>
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap Login</title>
+    <meta name="author" content="zhixin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/bootstrap-login.css">
+    <link rel="stylesheet" href="docs.css">
+    <!--<link rel="stylesheet" href="//wenzhixin.net.cn/css/fork.css">-->
+    <!--[if lt IE 9]>
+    <script src="//wenzhixin.net.cn/js/html5shiv.js"></script>
+    <script src="//wenzhixin.net.cn/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<a class="sr-only" href="#content">Skip to main content</a>
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse"
+                    data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#home">
+                Bootstrap Login
+            </a>
         </div>
-      </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#documentation" data-zh="文档">Documentation</a>
+                </li>
+                <li>
+                    <a href="#usage" data-zh="例子">Usage</a>
+                </li>
+                <li>
+                    <a href="#examples" data-zh="例子">Examples</a>
+                </li>
+                <li id="login3" data-toggle="login" data-type="dropdown">
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- GitHub buttons: see http://ghbtns.com -->
+                <li><iframe class="navbar-text" src="http://ghbtns.com/github-btn.html?user=wenzhixin&repo=bootstrap-login&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
+                <li><iframe class="navbar-text" src="http://ghbtns.com/github-btn.html?user=wenzhixin&repo=bootstrap-login&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe></li>
+                <li><iframe class="navbar-text" src="http://ghbtns.com/github-btn.html?user=wenzhixin&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li>
+            </ul>
+        </nav>
     </div>
-    <div id="login1" data-toggle="login"></div>
-    <div id="login2"
-         data-toggle="login"
-         data-lang="en"
-         data-title="GitHub"
-         data-action="https://github.com/"></div>
-    
-    <a href="https://github.com/wenzhixin/bootstrap-login" class="fork_me"></a>
-    
-    <script type="text/javascript" src="assets/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/bootstrap2.3/js/bootstrap.js"></script>
-    <script type="text/javascript" src="../src/bootstrap-login.js"></script>
-    <script src="//wenzhixin.net.cn/js/analytics.js"></script>
-  </body>
+</header>
+
+<div class="bs-header">
+    <div class="container">
+        <h1 id="home">Bootstrap Login</h1>
+        <p>Login plugin from for bootstrap.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="page-header">
+        <h2 id="documentation">Documentation</h2>
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Attribute</th>
+            <th>Description</th>
+            <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>-</td>
+            <td>data-toggle</td>
+            <td>Activate bootstrap login without writing JavaScript.</td>
+            <td><code>login</code></td>
+        </tr>
+        <tr>
+            <td>lang</td>
+            <td>data-lang</td>
+            <td>The language of login form, support <code>zh_CN</code> or <code>en</code>.</td>
+            <td><code>zh_CN</code></td>
+        </tr>
+        <tr>
+            <td>title</td>
+            <td>data-title</td>
+            <td>The title of login form.</td>
+            <td><code>Scutech</code></td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>data-type</td>
+            <td>The type of login form, support <code>normal</code> or <code>dropdown</code>.</td>
+            <td><code>normal</code></td>
+        </tr>
+        <tr>
+            <td>action</td>
+            <td>data-action</td>
+            <td>The action of login form, use RESTful default.</td>
+            <td><code>''</code></td>
+        </tr>
+        <tr>
+            <td>onSubmit</td>
+            <td>-</td>
+            <td>Fires when submit the form.</td>
+            <td><code>function() { return false; }</code></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="page-header">
+        <h2 id="usage">Usage</h2>
+    </div>
+    <div class="page-header">
+        <h3>Via data attributes</h3>
+    </div>
+    <p>Activate bootstrap login without writing JavaScript. Set data-toggle="login" on a normal element.</p>
+    <pre><code>&lt;div id="login1" data-toggle="login"&gt;&lt;/div&gt;
+
+&lt;div id="login2"
+     data-toggle="login"
+     data-lang="en"
+     data-title="GitHub"
+     data-action="https://github.com/"&gt;&lt;/div&gt;
+
+&lt;li id="login3" data-toggle="login" data-type="dropdown"&gt;</code></pre>
+
+    <div class="page-header">
+        <h3>Via JavaScript</h3>
+    </div>
+    <p>Call a bootstrap login with id table with JavaScript.</p>
+
+    <pre><code>$(function() {
+    $('#login').bootstrapLogin();
+    // use submit
+    $('#login).bootstrapLogin({
+        onSubmit: function(username, password) {
+            if (username === 'admin' && password === 'admin') {
+                location.href = 'http://wenzhixin.net.cn';
+                return true;
+            }
+            return false;
+        }
+    });
+});</code></pre>
+
+    <div class="page-header">
+        <h2 id="examples">Examples</h2>
+    </div>
+    <div>
+        <div id="login1" data-toggle="login"></div>
+        <div id="login2"
+             data-toggle="login"
+             data-lang="en"
+             data-title="GitHub"
+             data-action="https://github.com/"></div>
+    </div>
+</div>
+
+<footer class="bs-footer" role="contentinfo">
+    <div class="container">
+        <p>Copyright © 2012-2014, Bootstrap Table is licensed under the The MIT License. Coded by wenzhixin. </p>
+        <ul class="footer-links">
+            <li>Currently: v1.0.0</li>
+            <li class="muted">·</li>
+            <li><a href="http://wenzhixin.net.cn">My website</a></li>
+            <li class="muted">·</li>
+            <li><a href="http://repos.wenzhixin.net.cn">My repos</a></li>
+            <li class="muted">·</li>
+            <li><a href="https://github.com/wenzhixin">Github (@wenzhixin)</a></li>
+            <li class="muted">·</li>
+            <li><a href="https://github.com/wenzhixin/bootstrap-login/issues?state=open">Issues</a></li>
+            <li class="muted">·</li>
+            <li><a href="mailto:wenzhixin2010@gmail.com">Email</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script type="text/javascript" src="assets/jquery.min.js"></script>
+<script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="../src/bootstrap-login.js"></script>
+<script src="//wenzhixin.net.cn/js/analytics.js"></script>
+</body>
 </html>
