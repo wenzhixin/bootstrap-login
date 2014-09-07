@@ -1,0 +1,28 @@
+{
+    "name": "bootstrap-login",
+    "version": "1.0.0",
+    "title": "Bootstrap Login",
+    "description": "Login plugin from for bootstrap.",
+    "author": {
+        "name": "zhixin wen",
+        "email": "wenzhixin2010@gmail.com",
+        "url": "http://wenzhixin.net.cn/"
+    },
+    "licenses": [
+        {
+            "type": "MIT License",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.7"
+    },
+    "keywords": ["bootstrap.login"],
+    "homepage": "https://github.com/wenzhixin/bootstrap-login",
+    "demo": "http://wenzhixin.net.cn/p/bootstrap-login/docs#examples",
+    "bugs": {
+        "url": "https://github.com/wenzhixin/bootstrap-login/issues"
+    },
+    "docs": "http://wenzhixin.net.cn/p/bootstrap-login/docs#documentation",
+    "download": "https://github.com/wenzhixin/bootstrap-login/archive/master.zip"
+}
